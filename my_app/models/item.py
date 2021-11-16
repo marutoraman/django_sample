@@ -6,9 +6,7 @@ from imagekit.processors import ResizeToFill
 import ulid
 from ulid.api import default
 from users.models import User
-from app.settings import S3_ITEM_IMAGE_PATH
-from app.common import ULIDFileName
-from app.const import CHOICE
+
 
 # 商品データモデル
 class ItemModel(models.Model):
