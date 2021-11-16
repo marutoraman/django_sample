@@ -1,10 +1,5 @@
-from sell.models.item_stock import ItemStockModel
-from sell.models.mercari_category import MercariCategoryModel
 from django.db import models
-from imagekit.models import ImageSpecField, ProcessedImageField
-from imagekit.processors import ResizeToFill
 import ulid
-from ulid.api import default
 from users.models import User
 
 
