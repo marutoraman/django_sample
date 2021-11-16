@@ -4,7 +4,7 @@ from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.utils.translation import gettext_lazy as _
 from django.core.mail import send_mail
 from django.utils import timezone
-from common.utility import get_ulid
+import ulid
 
 class UserManager(UserManager):
     '''
@@ -41,7 +41,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     """　
     カスタムUserモデル
     """
-    id = models.CharField(max_length=32, default=get_ulid,
+    id = models.CharField(max_length=32, default=ulid.new,
                             primary_key=True, editable=False)
     username_validator = UnicodeUsernameValidator()
     full_name = models.CharField(_('氏名'), max_length=150, blank=True)
